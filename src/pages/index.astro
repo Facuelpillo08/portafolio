@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import TechScroll from "../components/TechScroll.astro";
+import Services from "../components/Services.astro";
+import Projects from "../components/Projects.astro";
+import Process from "../components/Process.astro";
+import About from "../components/About.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Facundo Acosta — Creative Engineer & Web Performance"
+  description="Desarrollo creativo premium de portafolios y aplicaciones web ultra-optimizado. Interfaces premium a 60fps con Astro, GSAP y Tailwind v4."
+>
+  <!-- Branding Navigation Grid -->
+  <Nav />
+
+  <main class="w-full block pt-20">
+    <!-- Luxury Hero Entry -->
+    <Hero />
+
+    <!-- Tech stack horizontal ticker marquee -->
+    <TechScroll />
+
+    <!-- Expertise & Services Cell Grid -->
+    <Services />
+
+    <!-- Pinned Fanning Projects Showcase -->
+    <Projects />
+
+    <!-- Pinned Horizontal Workflow Methodology -->
+    <Process />
+
+    <!-- Profile Count-up Bio -->
+    <About />
+
+    <!-- Prestige Client Testimonials -->
+    <Testimonials />
+
+    <!-- Contact Outreach Channels & Local Time -->
+    <Contact />
+  </main>
+
+  <!-- Footer Grid Cells Signature -->
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Wait for the custom loader to finish
+  window.addEventListener("site-loaded", () => {
+    // 1. Reveal text blocks (Titles, Subtitles, Paragraphs)
+    const textBlocks = gsap.utils.toArray(
+      "section:not(#hero-section) h2, section:not(#hero-section) h3, section:not(#hero-section) p:not(.process-p), .reveal-text"
+    );
+
+    textBlocks.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50, rotateX: -15, transformPerspective: 1000 },
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse", // Re-animates if they scroll back up
+          },
+        }
+      );
+    });
+
+    // 2. Reveal structured cards & grid items
+    const cards = gsap.utils.toArray(
+      ".service-card, .testimonial-card, .footer-cell"
+    );
+
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 60, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: "back.out(1.2)",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+</script>

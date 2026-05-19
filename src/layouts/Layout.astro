@@ -1,0 +1,263 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Facundo Acosta — Portfolio Prestige", 
+	description = "Creative Engineer & Web Performance Expert. Crafting premium digital experiences with luxury aesthetics and extreme performance." 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		
+		<!-- Premium Typography & Icons -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,600&family=Geist+Sans:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+		
+		<style is:global>
+			/* Premium Color Tokens & Variables */
+			:root {
+				--bg-color: #0e0e0e;
+				--text-color: #e5e2e1;
+				--primary-gold: #d4af37;
+				--primary-gold-rgb: 212, 175, 55;
+				--surface-dark: #151515;
+				--border-color: rgba(212, 175, 55, 0.55);
+			}
+
+			body {
+				background-color: var(--bg-color);
+				color: var(--text-color);
+				font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+				overflow-x: hidden;
+				-webkit-font-smoothing: antialiased;
+			}
+
+			/* Luxury Font Utility Styles */
+			.font-serif-italic {
+				font-family: 'Cormorant Garamond', Georgia, serif;
+				font-style: italic;
+				font-weight: 400;
+			}
+
+			.font-mono-tag {
+				font-family: 'JetBrains Mono', monospace;
+			}
+
+			/* Hide cursor globally for the custom cursor experience on desktop */
+			@media (min-width: 1024px) {
+				body, a, button, input, textarea {
+					cursor: none !important;
+				}
+			}
+
+			/* Lenis Smooth Scroll Setup */
+			html.lenis {
+				height: auto;
+			}
+			.lenis-smooth {
+				scroll-behavior: auto !important;
+			}
+			.lenis-smooth [data-lenis-prevent] {
+				overscroll-behavior: contain;
+			}
+			.lenis-stopped {
+				overflow: hidden;
+			}
+			.lenis-scrolling iframe {
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body class="selection:bg-primary-gold selection:text-black">
+		
+		<!-- Custom Luxury Cursor -->
+		<div id="custom-cursor" class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full border border-primary-gold pointer-events-none z-[9999] bg-primary-gold/10"></div>
+		<div id="custom-cursor-dot" class="hidden lg:block fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-primary-gold pointer-events-none z-[9999]"></div>
+
+		<!-- Premium Welcoming Loader ("Bienvenido") -->
+		<div id="loader" class="fixed inset-0 bg-[#0e0e0e] z-[10000] flex flex-col items-center justify-center overflow-hidden">
+			<!-- Cell grid lines decoration -->
+			<div class="absolute inset-0 grid grid-cols-3 pointer-events-none opacity-5">
+				<div class="border-r border-primary-gold/20 h-full"></div>
+				<div class="border-r border-primary-gold/20 h-full"></div>
+				<div></div>
+			</div>
+			
+			<div class="relative z-10 text-center flex flex-col items-center">
+				<span class="font-mono-tag text-primary-gold text-[10px] tracking-[0.4em] uppercase mb-4 opacity-50">FACUNDO ACOSTA STUDIO</span>
+				<div class="h-[60px] overflow-hidden flex items-center justify-center">
+					<h1 id="loader-text" class="text-4xl md:text-5xl font-serif-italic text-primary-gold translate-y-[100%] transition-transform duration-700 ease-out">
+						Bienvenido
+					</h1>
+				</div>
+				<div class="w-32 h-[1px] bg-primary-gold/10 mt-6 relative overflow-hidden rounded-full">
+					<div id="loader-progress" class="absolute top-0 left-0 h-full w-0 bg-primary-gold transition-all duration-[700ms] ease-out"></div>
+				</div>
+			</div>
+		</div>
+
+		<slot />
+
+		<!-- JS Integrations: Custom Cursor, Lenis Smooth Scroll, Loader Animation -->
+		<script>
+			import Lenis from 'lenis';
+			import { gsap } from 'gsap';
+
+			// 1. Loader Animation & Logic
+			document.addEventListener('DOMContentLoaded', () => {
+				const loader = document.getElementById('loader');
+				const loaderText = document.getElementById('loader-text');
+				const loaderProgress = document.getElementById('loader-progress');
+				
+				if (loader && loaderText && loaderProgress) {
+					// Animate progress bar and text entrance
+					setTimeout(() => {
+						loaderText.style.transform = 'translateY(0)';
+						loaderProgress.style.width = '100%';
+					}, 100);
+
+					// Slide up the loader when loaded
+					setTimeout(() => {
+						gsap.to(loader, {
+							y: '-100%',
+							duration: 0.75,
+							ease: 'power4.inOut',
+							onComplete: () => {
+								loader.style.display = 'none';
+								document.body.classList.remove('overflow-hidden');
+								// Dispatch loaded event to trigger other animations
+								window.dispatchEvent(new Event('site-loaded'));
+							}
+						});
+					}, 800);
+				}
+			});
+
+			// 2. Lenis Smooth Scroll Configuration
+			const lenis = new Lenis({
+				duration: 0.75,
+				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+				direction: 'vertical',
+				gestureDirection: 'vertical',
+				smoothTbody: true,
+				touchMultiplier: 1.5,
+				infinite: false,
+			});
+
+			function raf(time: number) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+			requestAnimationFrame(raf);
+
+			// Expose lenis instance globally for GSAP ScrollTrigger
+			window.lenis = lenis;
+
+			// 3. Custom Cursor Follower Logic (GSAP Power)
+			const cursor = document.getElementById('custom-cursor');
+			const cursorDot = document.getElementById('custom-cursor-dot');
+			
+			if (cursor && cursorDot) {
+				// Hide initially to prevent top-left flash
+				gsap.set([cursor, cursorDot], { xPercent: -50, yPercent: -50, opacity: 0 });
+
+				let hasMoved = false;
+
+				window.addEventListener('mousemove', (e) => {
+					if (!hasMoved) {
+						gsap.to([cursor, cursorDot], { opacity: 1, duration: 0.3 });
+						hasMoved = true;
+					}
+
+					// Instantly move the dot, smoothly follow with the ring
+					gsap.to(cursorDot, {
+						x: e.clientX,
+						y: e.clientY,
+						duration: 0.05,
+						overwrite: 'auto'
+					});
+
+					gsap.to(cursor, {
+						x: e.clientX,
+						y: e.clientY,
+						duration: 0.15,
+						overwrite: 'auto'
+					});
+				});
+
+				// Set up hover states
+				const setupHoverEffects = () => {
+					const interactives = document.querySelectorAll('a, button, input, textarea, [role="button"], #menu-toggle');
+					
+					interactives.forEach(el => {
+						// Clean existing listeners if any
+						el.removeEventListener('mouseenter', onMouseEnter);
+						el.removeEventListener('mouseleave', onMouseLeave);
+
+						el.addEventListener('mouseenter', onMouseEnter);
+						el.addEventListener('mouseleave', onMouseLeave);
+					});
+				};
+
+				const onMouseEnter = () => {
+					gsap.to(cursor, {
+						scale: 1.8,
+						backgroundColor: 'rgba(212, 175, 55, 0.2)',
+						borderColor: '#d4af37',
+						duration: 0.3,
+						ease: 'power2.out'
+					});
+					gsap.to(cursorDot, {
+						scale: 0,
+						duration: 0.2,
+						ease: 'power2.out'
+					});
+				};
+
+				const onMouseLeave = () => {
+					gsap.to(cursor, {
+						scale: 1,
+						backgroundColor: 'rgba(212, 175, 55, 0.1)',
+						borderColor: '#d4af37',
+						duration: 0.3,
+						ease: 'power2.out'
+					});
+					gsap.to(cursorDot, {
+						scale: 1,
+						duration: 0.2,
+						ease: 'power2.out'
+					});
+				};
+
+				// Init hovers
+				setupHoverEffects();
+
+				// Re-init hovers when site loaded or dynamically updated
+				window.addEventListener('site-loaded', setupHoverEffects);
+				
+				// Re-bind to any newly injected elements on dynamically modified pages
+				const observer = new MutationObserver(setupHoverEffects);
+				observer.observe(document.body, { childList: true, subtree: true });
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,118 @@
+---
+---
+
+<section id="about" class="min-h-screen py-36 px-6 md:px-12 max-w-[1280px] mx-auto border-b border-primary-gold/30 flex items-center">
+  
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+    
+    <!-- Abstract Portrait Placeholder (Mysterious Luxury Vibe) -->
+    <div class="lg:col-span-5 relative group rounded-[2.5rem] overflow-hidden aspect-[4/5] border border-primary-gold/30 bg-[#121212] flex items-center justify-center">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-gold/10 via-transparent to-transparent opacity-60"></div>
+      
+      <!-- Abstract luxury silhouette representation in SVGs -->
+      <svg class="w-48 h-48 text-primary-gold/15 group-hover:scale-110 transition-transform duration-[1200ms]" viewBox="0 0 100 100" fill="none">
+        <path d="M50,15 C35,15 25,25 25,40 C25,55 35,65 50,65 C65,65 75,55 75,40 C75,25 65,15 50,15 Z" stroke="currentColor" stroke-width="0.5" />
+        <path d="M15,85 C15,70 30,70 50,70 C70,70 85,70 85,85" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2" />
+        <circle cx="50" cy="40" r="30" stroke="currentColor" stroke-width="0.25" />
+        <line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" stroke-width="0.25" stroke-dasharray="4 4" />
+      </svg>
+      
+      <!-- Cell boundary lines overlay -->
+      <div class="absolute inset-x-8 bottom-8 p-6 rounded-2xl border border-primary-gold/30 bg-[#0e0e0e]/80 backdrop-blur-md z-10">
+        <span class="font-mono-tag text-[9px] text-primary-gold tracking-[0.2em] uppercase mb-1 block">LOCATION</span>
+        <p class="font-mono-tag text-xs text-white uppercase tracking-wider">Buenos Aires, AR — Worldwide</p>
+      </div>
+    </div>
+
+    <!-- Biography & Animated Metrics -->
+    <div class="lg:col-span-7 flex flex-col justify-center">
+      <span class="font-mono-tag text-[9px] text-primary-gold tracking-[0.4em] uppercase mb-4 block">04 / PERFIL</span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8 leading-tight">
+        La intersección entre <br />
+        <span class="font-serif-italic text-primary-gold font-normal italic capitalize">lujo y software</span>
+      </h2>
+      
+      <div class="space-y-6 font-mono-tag text-[11px] text-white/50 leading-relaxed uppercase tracking-wider mb-12">
+        <p>
+          Soy Facundo Acosta, un desarrollador creativo obsesionado con la perfección técnica. Ayudo a visionarios y empresas a materializar productos digitales que destacan por su pulcritud y sofisticación estética.
+        </p>
+        <p>
+          Mi enfoque se aleja por completo de las soluciones genéricas. Cada proyecto es una pieza única de ingeniería artesanal, diseñada a medida para ofrecer una experiencia de usuario memorable y resultados comerciales contundentes.
+        </p>
+      </div>
+
+      <!-- Animated metrics counters -->
+      <div class="grid grid-cols-2 gap-6 w-full">
+        
+        <div class="metric-card p-6 border border-primary-gold/30 rounded-2xl bg-[#121212]/50 hover:border-primary-gold/50 transition-colors duration-300">
+          <div class="flex items-baseline">
+            <span id="counter-years" class="text-4xl md:text-5xl font-serif-italic text-primary-gold font-normal">0</span>
+            <span class="text-2xl md:text-3xl font-serif-italic text-primary-gold font-normal">+</span>
+          </div>
+          <span class="font-mono-tag text-[8px] tracking-[0.3em] uppercase text-white/30 block mt-2">Años de experiencia</span>
+        </div>
+
+        <div class="metric-card p-6 border border-primary-gold/30 rounded-2xl bg-[#121212]/50 hover:border-primary-gold/50 transition-colors duration-300">
+          <div class="flex items-baseline">
+            <span id="counter-projects" class="text-4xl md:text-5xl font-serif-italic text-primary-gold font-normal">0</span>
+            <span class="text-2xl md:text-3xl font-serif-italic text-primary-gold font-normal">+</span>
+          </div>
+          <span class="font-mono-tag text-[8px] tracking-[0.3em] uppercase text-white/30 block mt-2">Proyectos lanzados</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initCounters = () => {
+    const yearsTarget = { val: 0 };
+    const projectsTarget = { val: 0 };
+    
+    const yearsEl = document.getElementById('counter-years');
+    const projectsEl = document.getElementById('counter-projects');
+
+    if (!yearsEl || !projectsEl) return;
+
+    // Create GSAP ScrollTrigger to run count up once on entering viewport
+    ScrollTrigger.create({
+      trigger: '#about',
+      start: 'top center+=150',
+      once: true,
+      onEnter: () => {
+        // Years count animation
+        gsap.to(yearsTarget, {
+          val: 4,
+          duration: 1.0,
+          ease: 'power4.out',
+          onUpdate: () => {
+            yearsEl.textContent = Math.floor(yearsTarget.val).toString();
+          }
+        });
+
+        // Projects count animation
+        gsap.to(projectsTarget, {
+          val: 50,
+          duration: 1.2,
+          ease: 'power4.out',
+          onUpdate: () => {
+            projectsEl.textContent = Math.floor(projectsTarget.val).toString();
+          }
+        });
+      }
+    });
+  };
+
+  window.addEventListener('site-loaded', () => {
+    initCounters();
+  });
+</script>
