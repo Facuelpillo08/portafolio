@@ -123,7 +123,8 @@ const {
 
 			<div class="relative z-10 text-center flex flex-col items-center">
 				<span
-					class="font-mono-tag text-primary-gold text-[10px] tracking-[0.4em] uppercase mb-4 opacity-50"
+					id="loader-sub"
+					class="font-mono-tag text-primary-gold text-[10px] tracking-[0.4em] uppercase mb-4"
 					>FACUNDO ACOSTA STUDIO</span
 				>
 				<div
@@ -131,7 +132,7 @@ const {
 				>
 					<h1
 						id="loader-text"
-						class="text-4xl md:text-5xl font-serif-italic text-primary-gold translate-y-[100%] transition-transform duration-700 ease-out"
+						class="text-4xl md:text-5xl font-serif-italic text-primary-gold"
 					>
 						Bienvenido
 					</h1>
@@ -141,7 +142,7 @@ const {
 				>
 					<div
 						id="loader-progress"
-						class="absolute top-0 left-0 h-full w-0 bg-primary-gold transition-all duration-[700ms] ease-out"
+						class="absolute top-0 left-0 h-full w-0 bg-primary-gold"
 					>
 					</div>
 				</div>
@@ -161,30 +162,43 @@ const {
 				const loaderText = document.getElementById("loader-text");
 				const loaderProgress =
 					document.getElementById("loader-progress");
+				const loaderSub = document.getElementById("loader-sub");
 
 				if (loader && loaderText && loaderProgress) {
-					// Animate progress bar and text entrance
-					setTimeout(() => {
-						loaderText.style.transform = "translateY(0)";
-						loaderProgress.style.width = "100%";
-					}, 100);
+					// Set initial state
+					gsap.set(loaderText, { y: "100%" });
+					gsap.set(loaderProgress, { width: "0%" });
+					if (loaderSub) gsap.set(loaderSub, { opacity: 0, y: 10 });
 
-					// Slide up the loader when loaded
-					setTimeout(() => {
-						gsap.to(loader, {
-							y: "-100%",
-							duration: 0.75,
-							ease: "power4.inOut",
-							onComplete: () => {
-								loader.style.display = "none";
-								document.body.classList.remove(
-									"overflow-hidden"
-								);
-								// Dispatch loaded event to trigger other animations
-								window.dispatchEvent(new Event("site-loaded"));
-							},
-						});
-					}, 800);
+					// Animate entrance
+					gsap.to(loaderSub, { opacity: 0.5, y: 0, duration: 0.4, ease: "power2.out" });
+					gsap.to(loaderText, {
+						y: "0%",
+						duration: 0.7,
+						ease: "power3.out",
+						delay: 0.05,
+					});
+					gsap.to(loaderProgress, {
+						width: "100%",
+						duration: 0.7,
+						ease: "power3.out",
+						delay: 0.05,
+					});
+
+					// Slide up the loader
+					gsap.to(loader, {
+						y: "-100%",
+						duration: 0.75,
+						ease: "power4.inOut",
+						delay: 1,
+						onComplete: () => {
+							loader.style.display = "none";
+							document.body.classList.remove(
+								"overflow-hidden"
+							);
+							window.dispatchEvent(new Event("site-loaded"));
+						},
+					});
 				}
 			});
 
