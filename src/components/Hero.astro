@@ -1,130 +1,223 @@
 ---
 ---
 
-<section class="relative min-h-[100svh] w-full flex flex-col justify-center items-center px-4 md:px-12 overflow-hidden border-b border-primary-gold/55 bg-[#0a0a0a]" id="hero-section">
-  
-  <!-- Massive Background Marquee / Stroke Text -->
-  <div class="absolute top-[15%] md:top-[20%] left-1/2 -translate-x-1/2 w-full overflow-hidden whitespace-nowrap pointer-events-none select-none z-0 opacity-[0.03] flex items-center justify-center">
-    <h2 class="text-[35vw] md:text-[25vw] font-black tracking-tighter text-transparent" style="-webkit-text-stroke: 2px var(--color-primary-gold);">ENGINEER</h2>
-  </div>
-
-  <!-- Interactive Grid Background & 3D Rings -->
+<section
+  class="relative min-h-[100svh] w-full flex flex-col justify-center items-center px-4 md:px-12 border-b border-primary-gold/55 bg-[#0a0a0a]"
+  id="hero-section"
+>
+  <!-- Atmospheric Deep Glow & Noise -->
   <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.08)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,#000_60%,transparent_100%)]"></div>
-    
-    <!-- 3D Floating Geometric Rings -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] max-w-[900px] max-h-[900px] perspective-[1000px] opacity-20 mix-blend-screen">
-      <div class="wireframe-ring absolute inset-0 border-[1px] border-primary-gold/40 rounded-full" style="transform: rotateX(70deg) rotateZ(0deg);"></div>
-      <div class="wireframe-ring absolute inset-[10%] border-[1px] border-primary-gold/30 rounded-full" style="transform: rotateX(70deg) rotateZ(45deg);"></div>
-      <div class="wireframe-ring absolute inset-[20%] border-[1px] border-primary-gold/20 rounded-full" style="transform: rotateX(70deg) rotateZ(90deg);"></div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-primary-gold/10 rounded-full blur-[120px] opacity-60"
+    >
     </div>
-
-    <!-- Dynamic Mouse Spotlight -->
-    <div id="hero-spotlight" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] md:w-[90vw] md:h-[90vw] max-w-[800px] max-h-[800px] bg-primary-gold/15 rounded-full filter blur-[100px] md:blur-[120px] opacity-70 transition-transform duration-1000 ease-out"></div>
+    <!-- Subtle SVG noise texture -->
+    <div
+      class="absolute inset-0 opacity-[0.05]"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"
+    >
+    </div>
   </div>
 
-  <!-- Glassmorphic Central Stage -->
-  <!-- Note: We use -mt-16 to visually pull the content up slightly to counter the optical illusion caused by the bottom marquee and top header -->
-  <div class="hero-stage opacity-0 translate-y-16 relative z-10 w-full max-w-[1000px] -mt-10 md:-mt-16">
-    
-    <!-- Glowing Edge Effect -->
-    <div class="absolute -inset-[1px] bg-gradient-to-b from-primary-gold/60 to-transparent rounded-[2.5rem] md:rounded-[4rem] z-0 blur-[2px] opacity-70"></div>
-    
-    <div class="relative bg-[#0e0e0e]/80 backdrop-blur-2xl rounded-[2.5rem] md:rounded-[4rem] p-8 sm:p-12 md:p-16 lg:p-20 border border-primary-gold/20 flex flex-col items-center text-center shadow-[0_0_80px_rgba(212,175,55,0.1)]">
-      
-      <!-- Availability Tag -->
-      <div class="hero-cta opacity-0 translate-y-6 inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6 md:mb-8 shadow-inner">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-gold opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-gold"></span>
+  <!-- Moving Verses Background (Small Texture) -->
+  <div
+    class="absolute inset-0 z-0 overflow-hidden pointer-events-none flex flex-col justify-center gap-4 md:gap-5 opacity-[0.3]"
+    style="transform: rotate(-2deg) scale(1.15);"
+  >
+    <!-- Row 1 -->
+    <div
+      class="verse-row-1 whitespace-nowrap flex gap-4 font-mono-tag text-[10px] md:text-[11px] text-white/40 tracking-[0.3em] uppercase"
+      data-speed="50"
+      data-speed-mobile="25"
+      data-dir="left"
+    >
+      <span
+        >EN PAZ ME ACOSTARÉ, Y ASIMISMO DORMIRÉ; PORQUE SOLO TÚ, JEHOVÁ, ME
+        HACES ESTAR CONFIADO.</span
+      >
+      <span class="text-primary-gold opacity-50">/</span>
+      <span>EL SEÑOR ES MI LUZ Y MI SALVACIÓN; ¿DE QUIÉN TEMERÉ?</span>
+      <span class="text-primary-gold opacity-50">/</span>
+      <span>TODO LO PUEDO EN CRISTO QUE ME FORTALECE.</span>
+      <span class="text-primary-gold opacity-50">/</span>
+    </div>
+
+    <!-- Row 2 -->
+    <div
+      class="verse-row-2 whitespace-nowrap flex gap-4 font-mono-tag text-[10px] md:text-[11px] text-white/40 tracking-[0.3em] uppercase ml-[-5%]"
+      data-speed="60"
+      data-speed-mobile="30"
+      data-dir="right"
+    >
+      <span>LÁMPARA ES A MIS PIES TU PALABRA, Y LUMBRERA A MI CAMINO.</span>
+      <span class="text-primary-gold opacity-50">/</span>
+      <span
+        >PORQUE YO SÉ LOS PENSAMIENTOS QUE TENGO ACERCA DE VOSOTROS,
+        PENSAMIENTOS DE PAZ.</span
+      >
+      <span class="text-primary-gold opacity-50">/</span>
+      <span>MAS LOS QUE ESPERAN A JEHOVÁ TENDRÁN NUEVAS FUERZAS.</span>
+      <span class="text-primary-gold opacity-50">/</span>
+    </div>
+
+    <!-- Row 3 -->
+    <div
+      class="verse-row-3 whitespace-nowrap flex gap-4 font-mono-tag text-[10px] md:text-[11px] text-white/40 tracking-[0.3em] uppercase ml-[-15%]"
+      data-speed="45"
+      data-speed-mobile="22"
+      data-dir="left"
+    >
+      <span>JEHOVÁ ES MI PASTOR; NADA ME FALTARÁ.</span>
+      <span class="text-primary-gold opacity-50">/</span>
+      <span
+        >MIRA QUE TE MANDO QUE TE ESFUERCES Y SEAS VALIENTE; NO TEMAS NI
+        DESMAYES.</span
+      >
+      <span class="text-primary-gold opacity-50">/</span>
+      <span
+        >PON TU DELICIA EN EL SEÑOR, Y ÉL TE DARÁ LAS PETICIONES DE TU CORAZÓN.</span
+      >
+      <span class="text-primary-gold opacity-50">/</span>
+    </div>
+
+    <!-- Row 4 -->
+    <div
+      class="verse-row-4 whitespace-nowrap flex gap-4 font-mono-tag text-[10px] md:text-[11px] text-white/40 tracking-[0.3em] uppercase ml-[5%]"
+      data-speed="55"
+      data-speed-mobile="27"
+      data-dir="right"
+    >
+      <span
+        >DIOS ES NUESTRO AMPARO Y FORTALEZA, NUESTRO PRONTO AUXILIO EN LAS
+        TRIBULACIONES.</span
+      >
+      <span class="text-primary-gold opacity-50">/</span>
+      <span
+        >EL QUE HABITA AL ABRIGO DEL ALTÍSIMO MORARÁ BAJO LA SOMBRA DEL
+        OMNIPOTENTE.</span
+      >
+      <span class="text-primary-gold opacity-50">/</span>
+    </div>
+
+    <!-- Row 5 -->
+    <div
+      class="verse-row-5 whitespace-nowrap flex gap-4 font-mono-tag text-[10px] md:text-[11px] text-white/40 tracking-[0.3em] uppercase ml-[-8%]"
+      data-speed="65"
+      data-speed-mobile="32"
+      data-dir="left"
+    >
+      <span
+        >CLAMA A MÍ, Y YO TE RESPONDERÉ, Y TE ENSEÑARÉ COSAS GRANDES Y OCULTAS
+        QUE TÚ NO CONOCES.</span
+      >
+      <span class="text-primary-gold opacity-50">/</span>
+      <span>EL AMOR NUNCA DEJA DE SER.</span>
+      <span class="text-primary-gold opacity-50">/</span>
+    </div>
+  </div>
+
+  <!-- Central Stage (No Box) -->
+  <div
+    class="hero-stage opacity-0 translate-y-16 relative z-10 w-full max-w-[1000px] flex flex-col items-center text-center mt-[-2%]"
+  >
+    <!-- Availability Tag -->
+    <div
+      class="hero-cta opacity-0 translate-y-6 inline-flex items-center gap-3 bg-[#0a0a0a]/60 border border-primary-gold/20 backdrop-blur-md px-5 py-2.5 rounded-full mb-6 md:mb-8 shadow-inner"
+    >
+      <span class="relative flex h-2 w-2">
+        <span
+          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-gold opacity-75"
+        ></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-gold"
+        ></span>
+      </span>
+      <span
+        class="font-mono-tag text-[9px] text-white/90 tracking-[0.2em] uppercase font-bold"
+        >Creative Developer</span
+      >
+    </div>
+
+    <!-- Main Title -->
+    <h1
+      class="flex flex-col items-center justify-center w-full mb-6 relative perspective-[1000px]"
+    >
+      <div class="overflow-hidden mb-1 md:mb-2">
+        <span
+          class="hero-title-part block text-[clamp(42px,8vw,100px)] font-bold tracking-tighter leading-[0.9] text-white drop-shadow-2xl"
+        >
+          DIGITAL
         </span>
-        <span class="font-mono-tag text-[9px] text-white/80 tracking-[0.2em] uppercase font-semibold">Creative Developer</span>
       </div>
+      <div class="overflow-visible">
+        <span
+          class="hero-title-part block text-[clamp(46px,10vw,110px)] font-serif-italic text-primary-gold font-normal italic leading-[0.8] relative inline-block drop-shadow-2xl"
+        >
+          Craftsmanship
+        </span>
+      </div>
+    </h1>
 
-      <!-- Main Title -->
-      <h1 class="flex flex-col items-center justify-center w-full mb-6 relative perspective-[1000px]">
-        <div class="overflow-hidden mb-1 md:mb-2">
-          <span class="hero-title-part block text-[clamp(42px,8vw,100px)] font-bold tracking-tighter leading-[0.9] text-white">
-            DIGITAL
-          </span>
+    <!-- Subtitle -->
+    <div class="overflow-hidden mb-8 md:mb-10 max-w-lg mx-auto">
+      <p
+        class="hero-subtitle font-body text-[clamp(14px,1.2vw,16px)] text-white/90 leading-relaxed font-light opacity-0 translate-y-6 drop-shadow-md bg-[#0a0a0a]/50 backdrop-blur-sm rounded-2xl p-4"
+      >
+        Transformo conceptos en <strong class="text-primary-gold font-normal"
+          >arquitecturas de alto rendimiento</strong
+        >. Especializado en interfaces inmersivas y animaciones a 60fps.
+      </p>
+    </div>
+
+    <!-- CTAs -->
+    <div
+      class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto"
+    >
+      <a
+        href="#projects"
+        class="hero-cta opacity-0 translate-y-6 group relative px-8 py-4 bg-primary-gold text-black rounded-full font-mono-tag text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 hover:scale-105 w-full sm:flex-1 shadow-[0_0_30px_rgba(212,175,55,0.25)]"
+      >
+        <span class="relative z-10 flex items-center justify-center gap-2">
+          Proyectos
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </span>
+        <div class="absolute inset-0 rounded-full overflow-hidden">
+          <div
+            class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"
+          >
+          </div>
         </div>
-        <div class="overflow-visible">
-          <span class="hero-title-part block text-[clamp(46px,10vw,110px)] font-serif-italic text-primary-gold font-normal italic leading-[0.8] relative inline-block">
-            Craftsmanship
-          </span>
-        </div>
-      </h1>
+      </a>
 
-      <!-- Subtitle -->
-      <div class="overflow-hidden mb-8 md:mb-10 max-w-lg mx-auto">
-        <p class="hero-subtitle font-body text-[clamp(14px,1.2vw,16px)] text-white/60 leading-relaxed font-light opacity-0 translate-y-6">
-          Transformo conceptos en <strong class="text-primary-gold font-normal">arquitecturas de alto rendimiento</strong>. Especializado en interfaces inmersivas y animaciones a 60fps.
-        </p>
-      </div>
-
-      <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto overflow-hidden">
-        <a href="#projects" class="hero-cta opacity-0 translate-y-6 group relative px-8 py-4 bg-primary-gold text-black rounded-full font-mono-tag text-[10px] font-black uppercase tracking-[0.2em] overflow-hidden transition-all duration-300 hover:scale-105 w-full sm:w-auto shadow-[0_10px_30px_rgba(212,175,55,0.3)]">
-          <span class="relative z-10 flex items-center justify-center gap-2">
-            Ver Proyectos
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </span>
-          <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-        </a>
-        
-        <a href="#contact" class="hero-cta opacity-0 translate-y-6 group px-8 py-4 flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-colors duration-300 font-mono-tag text-[10px] tracking-[0.2em] uppercase w-full sm:w-auto">
-          Contactar
-        </a>
-      </div>
-
+      <a
+        href="#contact"
+        class="hero-cta opacity-0 translate-y-6 group px-8 py-4 flex items-center justify-center gap-3 bg-[#0a0a0a]/60 backdrop-blur-md hover:bg-white/10 border border-white/20 rounded-full text-white transition-colors duration-300 font-mono-tag text-[10px] tracking-[0.2em] uppercase w-full sm:flex-1"
+      >
+        Contactar
+      </a>
     </div>
   </div>
-
-  <!-- Tech Stack Ticker (Absolute Bottom) -->
-  <div class="absolute bottom-0 left-0 w-full border-t border-primary-gold/20 bg-[#0a0a0a]/80 backdrop-blur-md py-4 overflow-hidden z-20 hidden sm:block">
-    <div class="flex whitespace-nowrap animate-[marquee_20s_linear_infinite] opacity-50 hover:opacity-100 transition-opacity duration-300">
-      <div class="flex gap-16 items-center px-8 text-[10px] font-mono-tag text-primary-gold tracking-[0.3em] uppercase">
-        <span>ASTRO.JS</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>GSAP ANIMATION</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>TAILWIND CSS</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>FIREBASE</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>WEBGL</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>REACT</span>
-      </div>
-      <div class="flex gap-16 items-center px-8 text-[10px] font-mono-tag text-primary-gold tracking-[0.3em] uppercase">
-        <span>ASTRO.JS</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>GSAP ANIMATION</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>TAILWIND CSS</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>FIREBASE</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>WEBGL</span>
-        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-        <span>REACT</span>
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <style>
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
   @keyframes rotate3d {
-    0% { transform: rotateX(70deg) rotateZ(0deg); }
-    100% { transform: rotateX(70deg) rotateZ(360deg); }
+    0% {
+      transform: rotateX(70deg) rotateZ(0deg);
+    }
+    100% {
+      transform: rotateX(70deg) rotateZ(360deg);
+    }
   }
   .wireframe-ring {
     animation: rotate3d 25s linear infinite;
@@ -140,78 +233,124 @@
 </style>
 
 <script>
-  import { gsap } from 'gsap';
+  import { gsap } from "gsap";
 
-  window.addEventListener('site-loaded', () => {
+  window.addEventListener("site-loaded", () => {
     const tl = gsap.timeline();
 
     // 1. Reveal Glass Stage
-    tl.to('.hero-stage', {
+    tl.to(".hero-stage", {
       opacity: 1,
       y: 0,
       duration: 1.4,
-      ease: 'power4.out'
+      ease: "power4.out",
     });
 
     // 2. Sophisticated 3D Text Reveal
-    tl.fromTo('.hero-title-part', {
-      y: 120,
-      rotateX: -45,
-      opacity: 0,
-      scale: 1.1
-    }, {
-      y: 0,
-      rotateX: 0,
-      opacity: 1,
-      scale: 1,
-      duration: 1.2,
-      stagger: 0.15,
-      ease: 'power3.out',
-      clearProps: 'all' // removes transform artifacts
-    }, "-=1.0");
+    tl.fromTo(
+      ".hero-title-part",
+      {
+        y: 120,
+        rotateX: -45,
+        opacity: 0,
+        scale: 1.1,
+      },
+      {
+        y: 0,
+        rotateX: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1.2,
+        stagger: 0.15,
+        ease: "power3.out",
+        clearProps: "all", // removes transform artifacts
+      },
+      "-=1.0"
+    );
 
     // 3. Subtitle fade in
-    tl.to('.hero-subtitle', {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power3.out'
-    }, "-=0.8");
+    tl.to(
+      ".hero-subtitle",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+      },
+      "-=0.8"
+    );
 
     // 4. CTAs fade in
-    tl.to('.hero-cta', {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: 0.1,
-      ease: 'power3.out'
-    }, "-=0.8");
+    tl.to(
+      ".hero-cta",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power3.out",
+      },
+      "-=0.8"
+    );
+
+    // RAF marquee: no wrap, no DOM manipulation — just scroll forever
+    const startMarquee = () => {
+      requestAnimationFrame(() => {
+        document.querySelectorAll('[class*="verse-row-"]').forEach((row) => {
+          const parent = row.parentElement;
+          if (!parent) return;
+
+          // Keep gap-4 from Tailwind; no margin/gap modifications needed
+          // since we never wrap/loop — the content just scrolls smoothly
+
+          // Clone content to 60 copies for ~40+ min of smooth scrolling
+          const html = row.innerHTML;
+          const copies = 60;
+          row.innerHTML = Array(copies).fill(html).join("");
+
+          // Determine scroll range and speed
+          const isReverse = row.getAttribute("data-dir") === "right";
+          const viewportW = parent.offsetWidth;
+          const totalW = row.scrollWidth;
+          const maxScroll = totalW - viewportW;
+          const copyW = totalW / copies;
+          const duration = window.innerWidth < 768
+            ? parseFloat(row.getAttribute("data-speed-mobile")) || 25
+            : parseFloat(row.getAttribute("data-speed")) || 50;
+          const pxPerSec = copyW / duration;
+
+          let pos = isReverse ? maxScroll : 0;
+          let last = performance.now();
+
+          const tick = (now) => {
+            const dt = Math.min((now - last) / 1000, 0.1);
+            last = now;
+            const step = pxPerSec * dt;
+
+            if (isReverse) {
+              pos -= step;
+              if (pos <= 0) { pos = maxScroll; }
+            } else {
+              pos += step;
+              if (pos >= maxScroll) { pos = 0; }
+            }
+
+            row.style.transform = `translateX(${-pos}px)`;
+            requestAnimationFrame(tick);
+          };
+
+          requestAnimationFrame(tick);
+        });
+      });
+    };
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(startMarquee);
+    } else {
+      startMarquee();
+    }
   });
 
-  const section = document.getElementById('hero-section');
-  const spotlight = document.getElementById('hero-spotlight');
-  
-  if (section && spotlight) {
-    let mouseX = 0;
-    let mouseY = 0;
-    let spotlightX = 0;
-    let spotlightY = 0;
-
-    section.addEventListener('mousemove', (e) => {
-      const rect = section.getBoundingClientRect();
-      mouseX = e.clientX - rect.left - rect.width / 2;
-      mouseY = e.clientY - rect.top - rect.height / 2;
-    });
-
-    const followMouse = () => {
-      spotlightX += (mouseX - spotlightX) * 0.05;
-      spotlightY += (mouseY - spotlightY) * 0.05;
-      
-      spotlight.style.transform = `translate(calc(-50% + ${spotlightX}px), calc(-50% + ${spotlightY}px))`;
-      
-      requestAnimationFrame(followMouse);
-    };
-    
-    followMouse();
-  }
+  // Spotlight moved to global layout (Layout.astro) for cursor alignment
 </script>
+

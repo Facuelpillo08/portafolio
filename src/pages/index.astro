@@ -59,7 +59,7 @@ import Footer from "../components/Footer.astro";
   window.addEventListener("site-loaded", () => {
     // 1. Reveal text blocks (Titles, Subtitles, Paragraphs)
     const textBlocks = gsap.utils.toArray(
-      "section:not(#hero-section) h2, section:not(#hero-section) h3, section:not(#hero-section) p:not(.process-p), .reveal-text"
+      "section:not(#hero-section) h2, section:not(#hero-section):not(#projects) h3, section:not(#hero-section):not(#projects) p:not(.process-p), .reveal-text"
     );
 
     textBlocks.forEach((el) => {

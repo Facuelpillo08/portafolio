@@ -1,166 +1,297 @@
 ---
 ---
 
-<header id="main-header" class="fixed top-0 left-0 w-full z-[90] bg-[#0e0e0e]/80 backdrop-blur-md border-b border-primary-gold/55 transition-transform duration-500 ease-out">
-  <div class="grid grid-cols-12 h-20 w-full max-w-[1440px] mx-auto items-center">
-    
+<header
+  id="main-header"
+  class="fixed top-0 left-0 w-full z-[90] bg-[#0e0e0e]/80 backdrop-blur-md border-b border-primary-gold/55 transition-transform duration-500 ease-out"
+>
+  <div
+    class="grid grid-cols-12 h-20 w-full max-w-[1440px] mx-auto items-center"
+  >
     <!-- Cell 1: Branding (Logo) -->
-    <div class="col-span-6 md:col-span-3 h-full border-r border-primary-gold/55 flex items-center px-6">
-      <a href="#" class="font-bold tracking-tighter text-sm flex items-center gap-2 group">
-        <span class="w-9 h-9 rounded-full bg-primary-gold flex items-center justify-center text-black text-xs font-black italic">F</span>
-        <span class="uppercase tracking-widest text-[12px] font-mono-tag">Facundo <span class="text-primary-gold font-serif-italic capitalize text-base font-normal normal-case italic">Acosta</span></span>
+    <div
+      class="col-span-6 md:col-span-3 h-full border-r border-primary-gold/55 flex items-center px-6"
+    >
+      <a
+        href="#"
+        class="font-bold tracking-tighter text-sm flex items-center gap-2 group"
+      >
+        <span
+          class="w-9 h-9 rounded-full bg-primary-gold flex items-center justify-center text-black text-xs font-black italic"
+          >F</span
+        >
+        <span class="uppercase tracking-widest text-[12px] font-mono-tag"
+          >Facundo <span
+            class="text-primary-gold font-serif-italic capitalize text-base font-normal normal-case italic"
+            >Acosta</span
+          >
+        </span>
       </a>
     </div>
 
     <!-- Cell 2: Navigation Links (Desktop) -->
-    <nav class="hidden md:flex col-span-6 h-full border-r border-primary-gold/55 items-center justify-center gap-8">
-      <a href="#services" class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2">Servicios</a>
-      <a href="#projects" class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2">Proyectos</a>
-      <a href="#process" class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2">Proceso</a>
-      <a href="#about" class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2">Perfil</a>
-      <a href="#testimonials" class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2">Testimonios</a>
-      <a href="#contact" class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2">Contacto</a>
+    <nav
+      class="hidden md:flex col-span-6 h-full border-r border-primary-gold/55 items-center justify-center gap-8"
+    >
+      <a
+        href="#services"
+        class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2"
+        >Servicios</a
+      >
+      <a
+        href="#projects"
+        class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2"
+        >Proyectos</a
+      >
+      <a
+        href="#process"
+        class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2"
+        >Proceso</a
+      >
+      <a
+        href="#about"
+        class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2"
+        >Perfil</a
+      >
+      <a
+        href="#testimonials"
+        class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2"
+        >Testimonios</a
+      >
+      <a
+        href="#contact"
+        class="nav-link font-mono-tag text-[11px] tracking-[0.25em] text-white/50 hover:text-primary-gold transition-colors duration-300 uppercase py-2"
+        >Contacto</a
+      >
     </nav>
 
     <!-- Cell 3: Hamburger Menu -->
-    <div class="col-span-6 md:col-span-3 h-full flex items-center justify-end px-6">
+    <div
+      class="col-span-6 md:col-span-3 h-full flex items-center justify-end px-6"
+    >
       <!-- Hamburger Menu Button -->
-      <button id="menu-toggle" aria-label="Abrir menú" class="w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none relative z-[100]">
-        <span class="w-6 h-[1.5px] bg-primary-gold transition-transform duration-300 origin-center" id="bar1"></span>
-        <span class="w-6 h-[1.5px] bg-primary-gold transition-opacity duration-300 origin-center" id="bar2"></span>
-        <span class="w-6 h-[1.5px] bg-primary-gold transition-transform duration-300 origin-center" id="bar3"></span>
+      <button
+        id="menu-toggle"
+        aria-label="Abrir menú"
+        class="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none relative z-[100]"
+      >
+        <span
+          class="w-6 h-[1.5px] bg-primary-gold transition-transform duration-300 origin-center"
+          id="bar1"></span>
+        <span
+          class="w-6 h-[1.5px] bg-primary-gold transition-opacity duration-300 origin-center"
+          id="bar2"></span>
+        <span
+          class="w-6 h-[1.5px] bg-primary-gold transition-transform duration-300 origin-center"
+          id="bar3"></span>
       </button>
     </div>
-
   </div>
 </header>
 
 <!-- Fullscreen Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-[#0e0e0e] z-[80] -translate-y-full transition-transform duration-700 ease-in-out flex flex-col justify-between p-8 overflow-hidden">
+<div
+  id="mobile-menu"
+  class="fixed inset-0 bg-[#0e0e0e] z-[100] -translate-y-full transition-transform duration-700 ease-in-out flex flex-col justify-between p-8 overflow-hidden"
+>
   <!-- Cell background styling in menu -->
   <div class="absolute inset-0 grid grid-cols-2 pointer-events-none opacity-5">
     <div class="border-r border-primary-gold/55 h-full"></div>
     <div></div>
   </div>
 
-  <div class="w-full flex justify-between items-center mt-16 relative z-10 border-b border-primary-gold/55 pb-4">
-    <span class="font-mono-tag text-[10px] tracking-[0.3em] text-primary-gold uppercase">NAVEGACIÓN</span>
-    <span class="font-serif-italic text-white/40 text-sm">Facundo Acosta Studio</span>
+  <div
+    class="w-full flex justify-between items-center mt-16 relative z-10 border-b border-primary-gold/55 pb-4"
+  >
+    <span
+      class="font-mono-tag text-[10px] tracking-[0.3em] text-primary-gold uppercase"
+      >NAVEGACIÓN</span
+    >
+    <div class="flex items-center gap-4">
+      <span class="font-serif-italic text-white/40 text-sm"
+        >Facundo Acosta Studio</span
+      >
+      <button
+        id="menu-close"
+        aria-label="Cerrar menú"
+        class="w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+      >
+        <span
+          class="w-6 h-[1.5px] bg-primary-gold rotate-45 translate-y-[1.5px]"
+        ></span>
+        <span
+          class="w-6 h-[1.5px] bg-primary-gold -rotate-45 -translate-y-[1.5px]"
+        ></span>
+      </button>
+    </div>
   </div>
 
   <nav class="flex flex-col gap-6 my-auto relative z-10">
-    <a href="#services" class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4">
+    <a
+      href="#services"
+      class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4"
+    >
       <span class="font-mono-tag text-xs text-primary-gold/40">01</span> Servicios
     </a>
-    <a href="#projects" class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4">
+    <a
+      href="#projects"
+      class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4"
+    >
       <span class="font-mono-tag text-xs text-primary-gold/40">02</span> Proyectos
     </a>
-    <a href="#process" class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4">
+    <a
+      href="#process"
+      class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4"
+    >
       <span class="font-mono-tag text-xs text-primary-gold/40">03</span> Metodología
     </a>
-    <a href="#about" class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4">
+    <a
+      href="#about"
+      class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4"
+    >
       <span class="font-mono-tag text-xs text-primary-gold/40">04</span> Perfil
     </a>
-    <a href="#testimonials" class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4">
+    <a
+      href="#testimonials"
+      class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4"
+    >
       <span class="font-mono-tag text-xs text-primary-gold/40">05</span> Testimonios
     </a>
-    <a href="#contact" class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4">
+    <a
+      href="#contact"
+      class="mobile-nav-link text-4xl md:text-5xl font-serif-italic hover:text-primary-gold transition-colors duration-300 flex items-center gap-4"
+    >
       <span class="font-mono-tag text-xs text-primary-gold/40">06</span> Contacto
     </a>
   </nav>
 
-  <div class="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center relative z-10 border-t border-primary-gold/55 pt-6 gap-4">
-    <a href="mailto:contact@facundoacosta.com" class="font-mono-tag text-[10px] tracking-[0.2em] text-primary-gold uppercase hover:underline">
+  <div
+    class="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center relative z-10 border-t border-primary-gold/55 pt-6 gap-4"
+  >
+    <a
+      href="mailto:contact@facundoacosta.com"
+      class="font-mono-tag text-[10px] tracking-[0.2em] text-primary-gold uppercase hover:underline"
+    >
       contact@facundoacosta.com
     </a>
-    <span class="font-mono-tag text-[9px] text-white/30 uppercase tracking-[0.2em]">
+    <span
+      class="font-mono-tag text-[9px] text-white/30 uppercase tracking-[0.2em]"
+    >
       © 2026 ACOSTA STUDIO. ALL RIGHTS RESERVED.
     </span>
   </div>
 </div>
 
 <script>
-  import { gsap } from 'gsap';
-
   // 1. Mobile Hamburger Menu Toggle Logic
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const bar1 = document.getElementById('bar1');
-  const bar2 = document.getElementById('bar2');
-  const bar3 = document.getElementById('bar3');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const bar1 = document.getElementById("bar1");
+  const bar2 = document.getElementById("bar2");
+  const bar3 = document.getElementById("bar3");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
   let isMenuOpen = false;
 
   const toggleMenu = () => {
+    if (!menuToggle || !mobileMenu || !bar1 || !bar2 || !bar3) return;
     isMenuOpen = !isMenuOpen;
-    
-    if (isMenuOpen) {
-      // Open state: Animate Hamburger icon bars to X
-      bar1!.style.transform = 'translateY(7.5px) rotate(45deg)';
-      bar2!.style.opacity = '0';
-      bar3!.style.transform = 'translateY(-7.5px) rotate(-45deg)';
-      
-      // Slide down fullscreen mobile menu
-      mobileMenu!.style.transform = 'translateY(0)';
-      
-      // Animate link entrance with GSAP stagger
-      gsap.fromTo(mobileLinks, 
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out', delay: 0.3 }
-      );
 
-      // Prevent main scroll while menu is open
+    if (isMenuOpen) {
+      bar1.style.transform = "translateY(7.5px) rotate(45deg)";
+      bar2.style.opacity = "0";
+      bar3.style.transform = "translateY(-7.5px) rotate(-45deg)";
+      mobileMenu.style.translate = "0 0";
+
+      import("gsap")
+        .then(({ gsap }) => {
+          gsap.fromTo(
+            mobileLinks,
+            { y: 50, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.6,
+              stagger: 0.1,
+              ease: "power3.out",
+              delay: 0.3,
+            }
+          );
+        })
+        .catch(() => {});
+
       if (window.lenis) window.lenis.stop();
     } else {
-      // Close state: Reset Hamburger icon bars
-      bar1!.style.transform = 'translateY(0) rotate(0)';
-      bar2!.style.opacity = '1';
-      bar3!.style.transform = 'translateY(0) rotate(0)';
-      
-      // Slide up fullscreen mobile menu
-      mobileMenu!.style.transform = 'translateY(-100%)';
-      
-      // Enable scroll back
+      bar1.style.transform = "translateY(0) rotate(0)";
+      bar2.style.opacity = "1";
+      bar3.style.transform = "translateY(0) rotate(0)";
+      mobileMenu.style.translate = "0 -100%";
+
       if (window.lenis) window.lenis.start();
     }
   };
 
-  menuToggle!.addEventListener('click', toggleMenu);
+  if (menuToggle) {
+    menuToggle.addEventListener("click", toggleMenu);
+  }
 
-  // Close mobile menu when links are clicked
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
+  if (mobileLinks.length) {
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        if (!isMenuOpen) return;
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        toggleMenu();
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            if (window.lenis) {
+              window.lenis.scrollTo(target, {
+                duration: 1.2,
+                immediate: false,
+              });
+            } else {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }
+        }
+      });
+    });
+  }
+
+  const menuClose = document.getElementById("menu-close");
+  if (menuClose) {
+    menuClose.addEventListener("click", () => {
       if (isMenuOpen) toggleMenu();
     });
-  });
+  }
 
   // 2. Premium Nav Link Letter-by-Letter Stagger Hover Animation
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll(".nav-link");
 
-  navLinks.forEach(link => {
-    const text = link.textContent || '';
-    link.innerHTML = '';
-    
-    // Create span wrapper and inner labels
-    const wrapper = document.createElement('span');
-    wrapper.className = 'relative inline-block overflow-hidden h-5';
-    
-    const labelMain = document.createElement('span');
-    labelMain.className = 'flex transition-transform duration-300 ease-out nav-label-main';
-    
-    const labelHover = document.createElement('span');
-    labelHover.className = 'flex absolute top-full left-0 transition-transform duration-300 ease-out nav-label-hover';
+  navLinks.forEach((link) => {
+    const text = link.textContent || "";
+    link.innerHTML = "";
 
-    // Break text into character spans
+    const wrapper = document.createElement("span");
+    wrapper.className = "relative inline-block overflow-hidden h-5";
+
+    const labelMain = document.createElement("span");
+    labelMain.className =
+      "flex transition-transform duration-300 ease-out nav-label-main";
+
+    const labelHover = document.createElement("span");
+    labelHover.className =
+      "flex absolute top-full left-0 transition-transform duration-300 ease-out nav-label-hover";
+
     [...text].forEach((char, index) => {
-      const span1 = document.createElement('span');
-      span1.textContent = char === ' ' ? '\u00A0' : char;
+      const span1 = document.createElement("span");
+      span1.textContent = char === " " ? "\u00A0" : char;
       span1.style.transitionDelay = `${index * 20}ms`;
       labelMain.appendChild(span1);
 
-      const span2 = document.createElement('span');
-      span2.textContent = char === ' ' ? '\u00A0' : char;
+      const span2 = document.createElement("span");
+      span2.textContent = char === " " ? "\u00A0" : char;
       span2.style.transitionDelay = `${index * 20}ms`;
       labelHover.appendChild(span2);
     });
@@ -169,50 +300,54 @@
     wrapper.appendChild(labelHover);
     link.appendChild(wrapper);
 
-    // Apply animation on hover using CSS transition classes
-    link.addEventListener('mouseenter', () => {
-      labelMain.querySelectorAll('span').forEach(s => s.style.transform = 'translateY(-100%)');
-      labelHover.querySelectorAll('span').forEach(s => s.style.transform = 'translateY(-100%)');
+    link.addEventListener("mouseenter", () => {
+      labelMain
+        .querySelectorAll("span")
+        .forEach((s) => (s.style.transform = "translateY(-100%)"));
+      labelHover
+        .querySelectorAll("span")
+        .forEach((s) => (s.style.transform = "translateY(-100%)"));
     });
 
-    link.addEventListener('mouseleave', () => {
-      labelMain.querySelectorAll('span').forEach(s => s.style.transform = 'translateY(0)');
-      labelHover.querySelectorAll('span').forEach(s => s.style.transform = 'translateY(0)');
+    link.addEventListener("mouseleave", () => {
+      labelMain
+        .querySelectorAll("span")
+        .forEach((s) => (s.style.transform = "translateY(0)"));
+      labelHover
+        .querySelectorAll("span")
+        .forEach((s) => (s.style.transform = "translateY(0)"));
     });
   });
 
   // 3. Hide on Scroll Down, Show on Scroll Up
   let lastScrollY = window.scrollY;
-  const header = document.getElementById('main-header');
+  const header = document.getElementById("main-header");
 
   const handleScroll = () => {
     if (!header || isMenuOpen) return;
     const currentScrollY = window.scrollY;
 
-    // Don't hide header in the very top range
     if (currentScrollY < 50) {
-      header.style.transform = 'translateY(0)';
+      header.style.transform = "translateY(0)";
       lastScrollY = currentScrollY;
       return;
     }
 
     if (currentScrollY > lastScrollY) {
-      // Scrolling down -> Hide header smoothly
-      header.style.transform = 'translateY(-100%)';
+      header.style.transform = "translateY(-100%)";
     } else {
-      // Scrolling up -> Show header smoothly
-      header.style.transform = 'translateY(0)';
+      header.style.transform = "translateY(0)";
     }
     lastScrollY = currentScrollY;
   };
 
-  // Wire to native window scroll (seamlessly captures Lenis scroll ticks)
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener("scroll", handleScroll, { passive: true });
 </script>
 
 <style>
   /* Letter transitions helper styling */
-  .nav-label-main span, .nav-label-hover span {
+  .nav-label-main span,
+  .nav-label-hover span {
     display: inline-block;
     transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
